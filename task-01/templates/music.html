@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐</title>
+</head>
+<link rel="stylesheet" href="../static/css/music.css">
+<link rel="stylesheet" href="../static/css/reset.css">
+<script src="../static/js/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="../static/jq/jquery-3.5.1.min.js"></script>
+<body>
+<div id="all" class="all-container">
+    <transition name="musicli-container">
+        <div class="sidebar" v-if="show">
+            <transition-group appear tag="ul" @before>
+                <li v-for="(item,index) in musiclist" @mousedown="playmusic(item.id)" class="musicli" :key="index">
+                    <svg t="1613922326306" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         p-id="2794" width="16" height="16">
+                        <path d="M546.903 18.104c-277.77 0-502.943 225.178-502.943 502.948S269.138 1024 546.903 1024c277.77 0 502.948-225.178 502.948-502.948S824.673 18.104 546.903 18.104z m0 955.597c-249.99 0-452.649-202.66-452.649-452.649 0-249.994 202.66-452.654 452.649-452.654s452.654 202.66 452.654 452.654c0 249.99-202.66 452.65-452.654 452.65z m228.3-488.294c-78.269-53.259-220.19-132.967-301.004-182.36-33.131-20.889-60.995-12.502-63.667 24.403-1.936 98.836 0 289.546 0 390.098 1.68 37.463 34.713 42.403 63.375 27.36l300.59-182.107c-0.527-0.323 61.599-34.494 0.707-77.394z"
+                              p-id="2795" fill="#eaf4f8"></path>
+                    </svg>
+<!--                    <span v-text="item.name"></span>-->
+                    <span>[[item.name]]</span>
+                </li>
+            </transition-group>
+        </div>
+    </transition>
+    <img :src="musicpicurl" alt="" class="background">
+    <div class="background-shadow"></div>
+    <input type="text" class="searchbar" id="input" v-model="searchname" @keyup.enter="searchmusic"
+           placeholder="搜索歌曲/歌手">
+    <img :src="musicpicurl" alt="" class="musicpic">
+    <audio :src="musicurl" autoplay class="audiobar"></audio>
+    <div class="audio-container">
+        <div class="audio-bar-bottom">
+            <span class="audio-bar-face"></span>
+            <span class="audio-bar-button"></span>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../static/js/music.js"></script>
+</html>

@@ -1,0 +1,41 @@
+.clearfix::after,
+.clearfix::before {
+    display: table;
+    content: '';
+    clear: both;
+}
+body {
+    font-family: "Microsoft Yahei Light", "Microsoft Yahei", PingFangSC-Regular, Helvetica, sans-serif, 等线;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    -ms-overflow-style: none;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.5) inset;
+}
+.loading{
+    width:100vw;
+    height:100vh;
+    z-index: 1001;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(56, 64, 69);
+    box-shadow: 0 0 50px black inset;
+    transition: all 0.7s;
+    color: white;
+}
+.swiper-slide {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/animate.css/animate.css">
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/vue-router.js"></script>
+
+</head>
+<body>
+<div id="change">
+    <transition mode="out-in" name="flip">
+        <router-view id="routerview"></router-view>
+    </transition>
+</div>
+
+<template id="signin">
+    <div class="card">
+        <a href="https://www.bilibili.com/video/BV12s41197Sp" class="h1"></a>
+        <form action="/music" class="login" method="post">
+            <input class="login_input" type="password" placeholder="请输入密码" name="key">
+            <a class="login_button" onclick="document.getElementsByClassName('login')[0].submit()">
+                <span class="login_text clearfix">登录</span>
+            </a>
+        </form>
+        <router-link to="signup" class="circle"></router-link>
+    </div>
+</template>
+
+<template id="signup">
+    <div class="card">
+        <a href="https://www.bilibili.com/video/BV12s41197Sp" class="h1"></a>
+        <form action="/music" class="login" method="post">
+            <input class="login_input" type="password" placeholder="请输入密码" name="key">
+            <a class="login_button" onclick="document.getElementsByClassName('login')[0].submit()">
+                <span class="login_text clearfix">注册</span>
+            </a>
+        </form>
+        <router-link to="signin" class="circle"></router-link>
+    </div>
+</template>
+
+</body>
+<script src="../static/jq/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../static/js/login.js"></script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style rel="stylesheet/scss" lang="scss" scoped>
+
+  .list-complete-item {
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    padding: 5px 12px;
+    display: inline-block;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #bfcbd9;
+    transition: all 1s;
+  }
+
+  .list-complete-item.sortable-chosen {
+    background: #4AB7BD;
+  }
+
+  .list-complete-item.sortable-ghost {
+    background: #30B08F;
+  }
+  .undraggable {
+    background-color: red;
+  }
+
+  .list-complete-enter,
+  .list-complete-leave-active {
+    opacity: 0;
+  }
+</style>
+<body>
+<template>
+  <div class="dndList">
+    <div class="dndList-list">
+      <h3>常用</h3>
+      <draggable :list="list1" :options="{group:'article', disabled: disabled}"
+                 @start="start22"
+                 @end="end22"
+                 class="dragArea11"
+                 style="height: 100px">
+        <div v-for="(element, index) in list1" :key="element.id" class="list-complete-item">
+          <div class="list-complete-item-handle">{{element.name}}</div>
+          <div>
+            <i class="el-icon-delete" @click="handleDel(index, element.id)"></i>
+          </div>
+        </div>
+      </draggable>
+    </div>
+    <div style="width: 100%; height: 10px; background-color: #bfbfbf"></div>
+    <div class="dndList-list">
+      <h3>所有</h3>
+      <draggable :list="list2" :options="{group:{name: falgs,pull:'clone'},filter: '.undraggable', sort: false}"
+                 @end="end"
+                 class="dragArea">
+        <div v-for="element in list2" :key="element.id"
+             :class="{undraggable : element.flag}"
+             class="list-complete-item">
+          <div class="list-complete-item-handle2"> {{element.name}}</div>
+        </div>
+      </draggable>
+    </div>
+  </div>
+</template>
+</body>
+<script src="../static/js/vue.js"></script>
+<script type="text/javascript" src="../static/jq/jquery-3.5.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+<script type="module" src="../static/js/drag.js"></script>
+</html>

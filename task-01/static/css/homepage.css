@@ -1,0 +1,103 @@
+body {
+    font-family: "Microsoft Yahei", PingFangSC-Regular, Helvetica, sans-serif, 等线;
+    cursor: default;
+    overflow: hidden;
+}
+a:hover,a:link {
+    text-decoration: none;
+}
+.bg {
+    background-image: url("../images/bc.jpg");
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    z-index: -1;
+    position: fixed;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+#homepage{
+    height: 100vh;
+}
+#homepage ul {
+    display: flex;
+    flex-direction: row;
+}
+
+#homepage li {
+    writing-mode: tb-rl;
+    color: white;
+    font-size: 18px;
+    margin-right: 50px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+#homepage li:hover{
+    transform: translateY(10px);
+}
+
+.homepage-face {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(49, 49, 49, 0.5);
+}
+
+#homepage h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 55px;
+    font-weight: bold;
+}
+
+#homepage h2:after {
+    content: "";
+    margin-left: 20px;
+    border-right: rgb(158, 0, 0) solid 8px;
+    transform: scaleY(0.5);
+}
+
+#homepage h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 65px;
+}
+
+.content {
+    position: absolute;
+    top: 32%;
+    right: 20%;
+}
+@media (max-width: 768px) {
+    .bg{
+        background-position: 100% 100%;
+    }
+    .content{
+        right: 15%;
+        top: 20%;
+    }
+    #homepage h2{
+        font-size: 20px;
+    }
+    #homepage ul{
+        flex-direction: column;
+    }
+    #homepage li{
+        writing-mode: inherit;
+        margin-right: 0;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+}
+.fa-angle-down{
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    left: 48%;
+}
+.fa-angle-down:before{
+    color: rgba(255,255,255,0.7);
+    font-size: 50px;
+}
+.fa:hover,.fa:link{
+    text-decoration: none;
+}

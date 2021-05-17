@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 2vw;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    transform: rotate3d(1, 1, 0, 0deg);
+    transition: all 0.5s;
+}
+
+.circle {
+    float: right;
+    border: solid white 3px;
+    border-radius: 10px;
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    right: 2vh;
+    top: 2vh;
+    position: absolute;
+    transition: 0.4s;
+}
+.circle:hover {
+    background-color: white;
+}
+
+.h1 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    height: 50px;
+    color: white;
+    font-weight: normal;
+    transition: font-size 0.3s;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.h1:hover {
+    font-size: 45px;
+    text-decoration: none;
+}
+
+.container {
+    position: absolute;
+}
+
+.login {
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 17vh;
+    justify-content: space-between;
+    align-content: space-around;
+    background: none;
+    color: white;
+}
+
+.login_text {
+    font-size: 18px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.login_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    background-color: transparent;
+    width: 200px;
+    min-height: 30px;
+    border-radius: 20px;
+    border: 3px solid #3498bd;
+    overflow: hidden;
+}
+
+#login_text {
+    position: absolute;
+}
+
+.login_input {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    border-bottom-color: #a9c7db;
+    transition: all 0.2s;
+}
+
+.login_input:focus {
+    border-bottom: solid 2px;
+}
+
+.login_input:hover {
+    border-bottom: solid 2px;
+}
+
+.login_input::placeholder {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.circle_in {
+    left: 0px;
+    top: 0px;
+    background-color: #3498bd;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    animation: in 0.3s ease-out forwards;
+}
+
+.circle_out {
+    left: 0px;
+    top: 0px;
+    background-color: #3498bd;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    animation: out 0.3s ease-out forwards;
+}
+
+@keyframes in {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    100% {
+        width: 601px;
+        height: 601px;
+    }
+}
+
+@keyframes out {
+    0% {
+        width: 601px;
+        height: 601px;
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.flip-enter,
+.flip-leave-to {
+    transform: rotate3d(1, 1, 0, 90deg);
+}
+
+.flip-enter-active,
+.flip-leave-active {
+    transition: all 1s linear;
+}

@@ -1,0 +1,154 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.background {
+    filter: blur(80px);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.background-shadow {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 130%), radial-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 200%)
+}
+
+.all-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 23vw;
+    height: 100vh;
+    min-width: 200px;
+    background-color: #44515a;
+    position: absolute;
+    right: 0;
+    top:0;
+    overflow: auto;
+    z-index: 1;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 12px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #ededed;
+}
+
+.musicpic {
+    width: 10vw;
+    height: 10vw;
+    min-width: 200px;
+    min-height: 200px;
+    position: relative;
+    border: solid #44515a 4px;
+
+}
+
+.musicli {
+    height: 50px;
+    color: ghostwhite;
+    font-size: 16px;
+    line-height: 50px;
+    list-style: none;
+    padding-left: 20px;
+    transition: padding-left 0.5s;
+}
+.musicli span{
+    text-shadow: 4px 4px 5px rgba(33,45,58,0.3);
+}
+
+.musicli:hover {
+    padding-left: 14px;
+    background-color: #6a7881;
+}
+.musicli-container-enter-active, .musicli-container-leave-active {
+    transition: all 1s;
+}
+
+.musicli-container-enter, .musicli-container-leave-to
+{
+    transform: translateX(23vw);
+}
+
+.searchbar {
+    max-height: 42px;
+    width: 230px;
+    padding: 13px;
+    text-align: center;
+    position: relative;
+    color: aliceblue;
+    outline-style: none;
+    background: rgba(54, 54, 54, 0.5);
+    border: 0px;
+    border-radius: 24px;
+    transition: background-color 0.3s, width 0.3s;
+}
+
+.searchbar:hover {
+    width: 430px;
+    background-color: rgba(54, 54, 54, 0.8);
+}
+
+.searchbar:focus {
+    width: 430px;
+    background-color: #2e2e2e;
+}
+
+.audiobar {
+    height: 20px;
+    width: 500px;
+    color: black;
+    background-color: black;
+}
+
+
+.audio-container {
+}
+
+.audio-bar-bottom {
+    width: 500px;
+    height: 3px;
+    background-color: darkgray;
+    position: relative;
+}
+
+.audio-bar-face {
+    width: 0px;
+    height: 3px;
+    background-color: #44515a;
+    position: absolute;
+}
+
+.audio-bar-button {
+    width: 9px;
+    height: 9px;
+    background-color: ghostwhite;
+    position: absolute;
+    margin-left: 0px;
+    border-radius: 100%;
+    top: -3px;
+    vertical-align: center;
+}

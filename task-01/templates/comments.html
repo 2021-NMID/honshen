@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <commenttemp @func="refreshcom"></commenttemp>
+        <ul>
+            <li v-for="(item,index) in he" v-text="item.comment" :key="index"></li>
+        </ul>
+    </div>
+    <template id="commenttemp">
+        <div id="commentbox">
+            <input type="text" v-model="comment">
+            <input type="button" value="提交" @click="pushcomment" >
+        </div>
+    </template>
+</body>
+<script>
+    var commenttemp = {
+        template: "#commenttemp",
+        data: function () {
+            return {
+                comment: ""
+            }
+        },
+        methods: {
+            pushcomment: function () {
+                var com = {comment:this.comment};
+                lis=JSON.parse(localStorage.getItem('com')||'[]');
+                lis.push(com);
+                localStorage.setItem('com', JSON.stringify(lis));
+                this.$parent.refreshcom();
+            }
+        }
+    };
+    new Vue({
+        el: "#app",
+        components: {
+            commenttemp
+        },
+        data: {
+            he:[
+                {comment:"我是一只笑笑鸟"},
+                {comment:"笑死我了"}
+            ]
+        },
+        created(){
+            this.refreshcom();
+        },
+        methods: {
+            refreshcom: function () {
+                list = JSON.parse(localStorage.getItem('com')||'[]');
+                console.log(list);
+                this.he=list;
+            }
+        }
+    })
+</script>
+</html>

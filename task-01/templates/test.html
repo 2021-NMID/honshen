@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <link rel="stylesheet" href="../static/css/photo.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/jq/jquery-3.5.1.min.js"></script>
+    <script src="../static/js/aos.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <title>Title</title>
+    <style>
+        body {
+            background-image: url("../static/images/bc.jpg");
+            width: 100%;
+            background-size: cover;
+            height: 100%;
+            z-index: -1;
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <section id="homepage" class="swiper-slide">
+            <div class="homepage-face">
+            </div>
+            <div class="content">
+                <h2 data-aos="fade-up">目录</h2>
+                <h3 data-aos="fade-up" data-aos-delay="200">特别鸣谢刘喆嘉提供的摄影作品</h3>
+                <ul>
+                    <a href="#homepage" data-aos="fade-up" data-aos-delay="400">
+                        <li>首&nbsp&nbsp&nbsp页</li>
+                    </a>
+                    <a href="#about" data-aos="fade-up" data-aos-delay="600">
+                        <li>关&nbsp&nbsp&nbsp于</li>
+                    </a>
+                    <a href="#photo" data-aos="fade-up" data-aos-delay="800">
+                        <li>作&nbsp&nbsp&nbsp品</li>
+                    </a>
+                    <a href="" data-aos="fade-up" data-aos-delay="1000">
+                        <li>照&nbsp&nbsp&nbsp片</li>
+                    </a>
+                </ul>
+            </div>
+            <a class="fa fa-angle-down" aria-hidden="true" href="#about"></a>
+        </section>
+        <section id="about" class="swiper-slide">
+            <div class="container about-container">
+                <p class="p-head" data-aos-delay="200">关于本网站</p>
+                <p class="p-line"></p>
+                <p class="about-p">火花来自于<a href="https://www.maorx.cn/">Maorx</a>
+                </p>
+                <p class="about-p">开始从硬件转软件</p>
+                <p class="about-p">于是第一版效仿了其设计</p>
+                <p class="about-p">在此表达感谢</p>
+                <p class="p-head">关于我</p>
+                <p class="p-line"></p>
+                <p class="p-icon">
+                    <i class="fa fa-map-marker" aria-hidden="true" title="重庆市万盛区"></i>
+                    <i class="fa fa-qq" aria-hidden="true" title="965598930"></i>
+                    <i class="fa fa-envelope" aria-hidden="true" title="965598930@qq.com"></i>
+                </p>
+                <p class="about-p">我是佘远航</p>
+                <p class="about-p">出生于2000年11月23日</p>
+                <p class="about-p">毕业于重庆第二外国语学校</p>
+                <p class="about-p">现就读于重庆邮电大学</p>
+                <p class="about-p">喜欢旅行，各种运动</p>
+                <p class="about-p">总梦想着后半生能得清闲</p>
+                <p class="about-p">很高兴与你相遇</p>
+            </div>
+        </section>
+        <section id="photo" class="swiper-slide">
+            <div class="container">
+                <div class="page-header">
+                    <h2>作品</h2>
+                    <p data-aos-delay="200">一些经历</p>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <form action="/music" class="tomusic" method="post">
+                        <div class="thumbnail" onclick="document.getElementsByClassName('tomusic')[0].submit()"
+                             data-aos-delay="400">
+                            <img src="../static/images/music.jpg" alt="">
+                            <div class="caption">
+                                <p class="photo-title">
+                                    网页音乐播放器
+                                </p>
+                                <p class="photo-intro">
+                                    网页在线播放器，简单运用了Vue以及axios
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="thumbnail" data-aos-delay="600">
+                        <img src="../static/images/Power_meter.jpg" alt="">
+                        <div class="caption">
+                            <p class="photo-title">
+                                功率计
+                            </p>
+                            <p class="photo-intro">
+                                第一个STM32项目
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="copyright">
+                        © Copyright <strong><span>S_y_h</span></strong>. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+<script src="../static/js/index.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical', // 垂直切换选项
+        loop: false, // 循环模式选项
+        mousewheel: true
+    })
+</script>
+</html>

@@ -1,0 +1,47 @@
+#about .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+p {
+    cursor: default;
+}
+
+.p-head {
+    font-size: 26px;
+    margin-top: 60px;
+}
+
+.p-line {
+    width: 50px;
+    margin: 10px 0px 20px 0px;
+    border-bottom: rgba(90, 120, 129, 0.83) solid;
+}
+
+.p-head:hover .p-line {
+    width: 100px;
+}
+
+i:before {
+    color: rgba(90, 120, 129, 0.8);
+    font-size: 22px;
+    margin: 10px;
+}
+
+i:hover:before {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+    .p-head {
+        font-size: 22px;
+        margin-top: 60px;
+    }
+    .about-p{
+        font-size: 13px;
+    }
+}
