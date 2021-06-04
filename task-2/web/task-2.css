@@ -1,0 +1,65 @@
+body{
+    background: url(./image/background.jpg) no-repeat center 0px;
+    background-size: 100% 100%;
+}
+.content{
+    display: flex;
+    height: 3852px;
+}
+.content-cell{
+    flex: 1;
+}
+.content-cell.empty{
+    flex: 0 0 18%;
+}
+.content-cell.info{
+    display: flex;
+    height: 3852px;
+    flex-direction: column;
+}
+
+/* 导航栏 */
+.navi{
+    flex: 0 0 2%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    font-size: 10px;
+}
+.navi.image{
+    flex: 0 0 17%;
+}
+.navi.left{
+    flex: 0 0 53%;
+    display: flex;
+    flex-direction: row;
+}
+.navi.right{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.navi.left.empty{
+    flex: 0 0 3%;
+}
+.navi.left.item{
+    flex: 0 0 17%;
+}
+.navi.right.empty{
+    flex: 1;
+}
+.navi.right.item{
+    flex: 0 0 29%;
+}
+
+/* 导航栏下面 蓝色区域 空白部分 */
+.empty{
+    flex: 0 0 6.5%;
+}
+
+/* 导航栏下面 蓝色区域 空白部分 */
+.show{
+    flex: 0 0 15.5%;
+}

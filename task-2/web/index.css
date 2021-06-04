@@ -1,0 +1,111 @@
+body{
+    height: 3852px;
+    background-image: url(./image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.content{
+    height: 3852px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top{
+    height: 963px;
+}
+/* 顶部导航栏 */
+.navigator{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.n_left{
+    flex-grow:2;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.logo{
+    flex-grow: 1;
+}
+.n_middle{
+    flex-grow: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.n_middle_item{
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
+.n_right{
+    flex-grow: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.n_right_item{
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
+.n_right_emptyitem{
+    flex-grow: 2;
+}
+
+
+/* 顶部导航栏下方界面 */
+.topscreen{
+    height: 860px;
+    display: flex;
+    flex-direction: row;
+}
+.emptyarea{
+    flex: 1;
+}
+.area{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+.area_img{
+    flex: 3;
+    text-align: center;
+    margin-top: -100px;
+}
+.bigword_area{
+    flex-grow: 8;
+    color: white;
+    width: fit-content;
+}
+p.a{
+    font-size: 40px;
+}
+p.b{
+    background-image: url(./image/button.png);
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 260px;
+    margin-left: -20px;
+    text-align: center;
+    line-height: 72px;
+}
+.bigword_above{
+    flex-grow: 4;
+}
+.bigword_bottom{
+    flex-grow: 5;
+}
+
+
+.middle{
+    height: 2177px;
+}
+
+.bottom{
+    height: 712px;
+}
