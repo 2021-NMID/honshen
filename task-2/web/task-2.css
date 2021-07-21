@@ -24,9 +24,10 @@ body{
     display: flex;
     flex-direction: row;
     color: white;
-    text-align: center;
-    line-height: 80px;
+    align-items: center;   /*// 垂直居中，针对的是类下面的子元素，不包含“孙子”元素 */
+    justify-content: center; /*// 水平居中，针对的是类下面的子元素，不包含“孙子”元素*/
     font-size: 10px;
+    flex-wrap: nowrap;
 }
 .navi.image{
     flex: 0 0 17%;

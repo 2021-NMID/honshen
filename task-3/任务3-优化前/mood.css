@@ -1,0 +1,110 @@
+body{
+    display: block;
+    height: auto;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    text-size-adjust: 100%;
+    width: 100%;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+}
+.left{
+    flex: 2;
+}
+.right{
+    margin-inline: 20px;
+    flex: 1;
+    text-align: center;
+}
+.login_img{
+    height: 100%;
+    width: 100%;
+}
+.log{
+    margin-block: 40px;
+    color: #e1f1f2;
+    font-size: 100px;
+}
+.welcome{
+    margin-block: 5px;
+    font-size: 20px;
+}
+.change{
+    margin-left: 200px;
+    color: #69c6d6;
+    margin-top: 60px;
+}
+.ch{
+    border: none;
+    color: #69c6d6;
+    background-color: white;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    margin-block: 10px;
+    margin-inline: 100px;
+    height: 40px;
+    border: #69c6d6 solid 2px;
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.input_send{
+    margin-block: 10px;
+    margin-inline: 100px;
+    height: 40px;
+    border: #69c6d6 solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: -10px;
+}
+.send{
+    height: 40px;
+    border: #69c6d6 solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    text-align: center;
+    background-color: #69c6d6;
+    color: white;
+}
+.send_yanzhengma{
+    width: 100px;
+    border:#69c6d6;
+    background-color: #69c6d6;
+    border-radius: 25px;
+    text-align: center;
+    height: 40px;
+    color: white;
+    margin: 0px;
+    margin-left: -100px;
+}
+.sub{
+    margin-block: 10px;
+    margin-inline: 100px;
+    height: 40px;
+    border: #69c6d6 solid 2px;
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #69c6d6;
+    color: white;
+}
+input{
+    border: none;
+    margin-top: 12px;
+    width: 280px;
+    outline: none;
+}

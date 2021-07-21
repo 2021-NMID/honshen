@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<title>Moods</title>
+        <style>
+            input{
+                border: #69c6d6 solid 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="left">
+                <img class="login_img" src="./image/注册背景图.png">
+            </div>
+            <table>
+                <tr>
+                    <td>昵称</td>
+                    <td>
+                        <input id="name" type="text" onblur="select_id()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        <input id="sex" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>年龄</td>
+                    <td>
+                        <input id="age" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td>
+                        <input id="ps" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td>
+                        <input id="ph" type="text" onblur="ph_check()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>验证码</td>
+                    <td>
+                        <input id="yzm" type="text">
+                        <input id="get_yzm" type="button" value="获取验证码" onclick="get_yzm()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="reg" type="button" value="注册" onclick="regis()">
+                    </td>
+                </tr>
+            </table>
+    </body>
+</html>
+<script>
+    //昵称失去焦点查询是否被使用
+    function select_id(){
+        var id = document.getElementById('name').value;
+        if (id == "") {
+            alert('未输入昵称')
+        }else{
+            let xhr = new XMLHttpRequest();
+            let server = 'http://47.98.192.167:8800/is_repeat?nick_name='+id;
+            console.log(id);
+            console.log(server);
+
+            xhr.open('GET',server);
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        console.log(xhr.response);
+                        var obj = JSON.parse(xhr.response);
+                        console.log(obj.data[id]);
+
+                        if(obj.data[id] == 'false'){
+                            alert("可注册");
+                        }else{
+                            alert("昵称已被使用");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //发送验证码
+    function get_yzm(){
+        var ph = document.getElementById('ph').value;
+
+        let xhr = new XMLHttpRequest();
+        let server = 'http://47.98.192.167:8800/smsXxs?phone='+ph;
+        xhr.open('GET',server);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                if(xhr.status === 200){
+                    alert('验证码已发送');
+                }
+            }
+        }
+
+    }
+
+    //验证邮箱格式或是否为空
+    function ph_check(){
+        var str = document.getElementById('ph').value;
+        var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+        if(re.test(str)){
+        }else if(str==""){
+            alert("邮箱为空");
+        }else{
+            alert("邮箱格式错误");
+        }
+        
+    }
+
+    //注册
+    function regis(){
+        let age = document.getElementById('age').value;
+        let sex = document.getElementById('sex').value;
+        let gender = null;
+        if(sex='女'){
+            gender = 'true'
+        }if(sex='男'){
+            gender = 'false'
+        }
+        let name = document.getElementById('name').value;
+        let pin = document.getElementById('yzm').value;
+        let ph = document.getElementById('ph').value;
+        let ps = document.getElementById('ps').value;
+        let server = 'http://47.98.192.167:8800/register?age='+age+'&gender='+gender+'&name='+name+'&pin='+pin+'&psw='+ps+'&tel='+ph;
+        console.log(server)
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST',server)
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                if (xhr.status === 200) {
+                    alert('注册成功')
+                }
+            }
+        }
+    }
+ </script>
