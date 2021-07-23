@@ -27,7 +27,7 @@ body{
 }
 .log{
     margin-block: 40px;
-    color: #e1f1f2;
+    color: #69c6d6;
     font-size: 100px;
 }
 .welcome{
@@ -47,6 +47,7 @@ body{
 .info{
     display: flex;
     flex-direction: column;
+    font-size: 12px;
 }
 .input{
     margin-block: 10px;
